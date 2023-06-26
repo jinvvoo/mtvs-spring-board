@@ -3,8 +3,11 @@ package com.ohgiraffers.mtvsreservetest.board;
 import com.ohgiraffers.mtvsreservetest.domain.dto.BoardDTO;
 import com.ohgiraffers.mtvsreservetest.domain.service.BoardService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class BoardController {
@@ -14,7 +17,9 @@ public class BoardController {
         this.boardService = boardService;
     }
     @GetMapping("/board")
-    public String list() {
+    public String list(Model model) {
+        List<BoardDTO> boardDTOList = boardService.getBoardList();
+        model.addAttribute("postList", boardDTOList);
         return "board/list.html";
     }
 
