@@ -22,7 +22,7 @@ public class Board {
     @GeneratedValue
     private Long id;
 
-    @Column(length = 10, nullable = false)
+    @Column(length = 40, nullable = false)
     private String author;
 
     @Column(length = 100, nullable = false)
