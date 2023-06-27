@@ -1,7 +1,7 @@
-package com.ohgiraffers.mtvsreservetest.board;
+package com.ohgiraffers.mtvsreserve.board;
 
-import com.ohgiraffers.mtvsreservetest.board.dto.BoardDTO;
-import com.ohgiraffers.mtvsreservetest.board.service.BoardService;
+import com.ohgiraffers.mtvsreserve.board.dto.BoardDTO;
+import com.ohgiraffers.mtvsreserve.board.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreservetest;
+package com.ohgiraffers.mtvsreserve;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

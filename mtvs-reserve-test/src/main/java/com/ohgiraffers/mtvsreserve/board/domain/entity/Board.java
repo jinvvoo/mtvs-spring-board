@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreservetest.board.domain.entity;
+package com.ohgiraffers.mtvsreserve.board.domain.entity;
 
 
 import lombok.AccessLevel;

@@ -1,9 +1,9 @@
-package com.ohgiraffers.mtvsreservetest.board.service;
+package com.ohgiraffers.mtvsreserve.board.service;
 
 
-import com.ohgiraffers.mtvsreservetest.board.domain.repository.BoardRepository;
-import com.ohgiraffers.mtvsreservetest.board.domain.entity.Board;
-import com.ohgiraffers.mtvsreservetest.board.dto.BoardDTO;
+import com.ohgiraffers.mtvsreserve.board.domain.repository.BoardRepository;
+import com.ohgiraffers.mtvsreserve.board.domain.entity.Board;
+import com.ohgiraffers.mtvsreserve.board.dto.BoardDTO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
