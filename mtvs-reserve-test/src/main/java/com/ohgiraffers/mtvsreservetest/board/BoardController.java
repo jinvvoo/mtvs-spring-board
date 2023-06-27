@@ -36,7 +36,7 @@ public class BoardController {
         return "redirect:/board";
     }
 
-    // 여기서부터 5단계
+    // detail 조회
     @GetMapping("/post/{id}")
     public String detail(@PathVariable("id") Long id, Model model) {
         BoardDTO boardDTO = boardService.getPost(id);
@@ -46,18 +46,3 @@ public class BoardController {
         return "board/detail.html";
     }
 }
-
-
-//    public BoardDTO getPost(Long id){
-//        Optional<Board> boardWrapper = boardrepository.findById(id);
-//        Board board = boardWrapper.get();
-//
-//        BoardDTO boardDTO = BoardDTO.builder()
-//                .id(board.getId())
-//                .author(board.getAuthor())
-//                .title(board.getTitle())
-//                .content(board.getContent())
-//                .createdDate(board.getCreatedDate())
-//                .build();
-//
-//        return boardDTO;

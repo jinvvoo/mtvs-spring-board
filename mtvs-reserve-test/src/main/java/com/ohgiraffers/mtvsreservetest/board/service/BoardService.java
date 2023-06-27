@@ -57,22 +57,3 @@ public class BoardService {
         return boardDTO;
     }
 }
-
-
-
-//    public BoardDTO getPost(Long id) {
-//        Optional<Board> boardWrapper = boardRepository.findById(id);
-//        Board board = boardWrapper.get();
-//
-//        BoardDTO boardDTO = BoardDTO.builder()
-//                .id(board.getId())
-//                .author(board.getAuthor())
-//                .title(board.getTitle())
-//                .content(board.getContent())
-//
-//                .createdDate(board.getCreatedDate())
-//                .build();
-//
-//        return boardDTO;
-//    }
-//}
