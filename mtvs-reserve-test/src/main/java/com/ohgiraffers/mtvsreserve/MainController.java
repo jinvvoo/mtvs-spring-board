@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreservetest;
+package com.ohgiraffers.mtvsreserve;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

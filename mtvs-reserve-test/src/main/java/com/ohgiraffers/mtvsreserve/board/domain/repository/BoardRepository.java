@@ -1,6 +1,6 @@
-package com.ohgiraffers.mtvsreservetest.board.domain.repository;
+package com.ohgiraffers.mtvsreserve.board.domain.repository;
 
-import com.ohgiraffers.mtvsreservetest.board.domain.entity.Board;
+import com.ohgiraffers.mtvsreserve.board.domain.entity.Board;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BoardRepository extends JpaRepository<Board, Long> {
