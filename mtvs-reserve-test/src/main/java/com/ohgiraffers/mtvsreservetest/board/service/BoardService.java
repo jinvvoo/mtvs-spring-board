@@ -56,4 +56,10 @@ public class BoardService {
                 .build();
         return boardDTO;
     }
+
+    //삭제 기능
+    @Transactional
+    public void deletePost(Long id) {
+        boardRepository.deleteById(id);
+    }
 }
