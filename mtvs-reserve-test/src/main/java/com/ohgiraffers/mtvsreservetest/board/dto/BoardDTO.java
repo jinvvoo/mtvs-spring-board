@@ -1,7 +1,7 @@
-package com.ohgiraffers.mtvsreservetest.domain.dto;
+package com.ohgiraffers.mtvsreservetest.board.dto;
 
 
-import com.ohgiraffers.mtvsreservetest.domain.entity.Board;
+import com.ohgiraffers.mtvsreservetest.board.domain.entity.Board;
 import lombok.*;
 
 import java.time.LocalDateTime;

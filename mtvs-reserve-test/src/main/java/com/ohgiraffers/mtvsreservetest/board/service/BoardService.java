@@ -1,15 +1,14 @@
-package com.ohgiraffers.mtvsreservetest.domain.service;
+package com.ohgiraffers.mtvsreservetest.board.service;
 
 
-import com.ohgiraffers.mtvsreservetest.domain.entity.Board;
-import com.ohgiraffers.mtvsreservetest.domain.repository.BoardRepository;
-import com.ohgiraffers.mtvsreservetest.domain.dto.BoardDTO;
+import com.ohgiraffers.mtvsreservetest.board.domain.repository.BoardRepository;
+import com.ohgiraffers.mtvsreservetest.board.domain.entity.Board;
+import com.ohgiraffers.mtvsreservetest.board.dto.BoardDTO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BoardService {
@@ -43,36 +42,37 @@ public class BoardService {
         return boardDTOList;
     }
 
-
-
-    //5단계
-
-
+    //detail 추가
     @Transactional
     public BoardDTO getPost(Long id) {
-        Optional<Board> boardWrapper = boardRepository.findById(id);
-        Board board = boardWrapper.get();
+        Board board = boardRepository.findById(id).get();
 
         BoardDTO boardDTO = BoardDTO.builder()
                 .id(board.getId())
                 .author(board.getAuthor())
                 .title(board.getTitle())
                 .content(board.getContent())
-
                 .createdDate(board.getCreatedDate())
                 .build();
-
         return boardDTO;
     }
 }
 
-/*
-    // 여기서부터 5단계
-    public PostResponse findPostById(final Long id) {
-        return boardRepository.findById(id);
-    }
 
-    public List<PostResponse> findAllPost() {
-        return boardRepository.findAll();
-    }
-*/
+
+//    public BoardDTO getPost(Long id) {
+//        Optional<Board> boardWrapper = boardRepository.findById(id);
+//        Board board = boardWrapper.get();
+//
+//        BoardDTO boardDTO = BoardDTO.builder()
+//                .id(board.getId())
+//                .author(board.getAuthor())
+//                .title(board.getTitle())
+//                .content(board.getContent())
+//
+//                .createdDate(board.getCreatedDate())
+//                .build();
+//
+//        return boardDTO;
+//    }
+//}

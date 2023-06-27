@@ -1,61 +1,39 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>게시판 내용</title>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <title th:text="@{'게시판 - ' + ${post.title}}"></title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
 </head>
 <body>
+<header th:insert="common/header.html"></header>
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <h2 th:text="${boardDTO.title}"></h2>
-            <p th:inline="text">작성일 : [[${#temporals.format(boardDTO.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
-
-            <p th:text="${boardDTO.content}"></p>
-        </div>
-    </div>
-</div>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-</body>
-</html>
-
-
-
-
-<!--
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8" />
-    <title>게시판 - {{ boardDTO.title }}</title>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-</head>
-<body>
-<header>
-    <div class="navbar navbar-dark bg-dark shadow-sm mb-3">
-        <div class="container d-flex justify-content-between">
-            <a href="/static" class="navbar-brand d-flex align-items-center">
-                <strong>게시판</strong>
-            </a>
-        </div>
-    </div>
-</header>
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title" th:text="|여기가 맞나요? ${boardDTO.title}|"></h5>
+            <h5 class="card-title" th:text="@{${post.title} + ' - ' + ${post.author}}"></h5>
             <p class="card-text">
-                <small class="text-muted">{{ boardDTO.created_date | date:"Y-m-d h:i" }}</small>
+                <small
+                        class="text-muted"
+                        th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"
+                ></small>
             </p>
-            <p class="card-text">{{ boardDTO.content }}</p>
+            <p class="card-text" th:text="${post.content}"></p>
         </div>
     </div>
-
+    <div class="row mt-3">
+        <div class="col-auto mr-auto"></div>
+        <div class="col-auto">
+            <a class="btn btn-info" th:href="@{'/post/edit/' + ${post.id}}" role="button">수정</a>
+        </div>
+        <div class="col-auto">
+            <form id="delete-form" th:action="@{'/post/' + ${post.id}}" method="post">
+                <input type="hidden" name="_method" value="delete" />
+                <button id="delete-btn" type="submit" class="btn btn-danger">삭제</button>
+            </form>
+        </div>
+    </div>
 </div>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
--->
