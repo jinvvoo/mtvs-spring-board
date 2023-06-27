@@ -18,4 +18,4 @@ public class Application {
 		return new HiddenHttpMethodFilter();
 	}
 }
-// board-7 삭제기능
+// board-8 첨부파일 기능
