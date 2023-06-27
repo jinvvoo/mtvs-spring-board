@@ -11,3 +11,4 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 }
+// board-6 생성
